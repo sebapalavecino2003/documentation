@@ -11,3 +11,16 @@
 *.bcf
 *.blg
 build/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.bcf
+*.blg
+*.pdf
