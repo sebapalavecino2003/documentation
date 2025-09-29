@@ -1,0 +1,26 @@
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.ist
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lot
+*.lof
+
+# Editor/OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Opcional: carpeta de builds locales
+/build/
