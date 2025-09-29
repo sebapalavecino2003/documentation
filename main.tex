@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Idioma ---
+\usepackage[spanish]{babel}
+
+% --- Tipografías con XeLaTeX/LuaLaTeX ---
+\usepackage{fontspec}                 % NO usar inputenc/fontenc con fontspec
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Arial}                   % Arial como fuente principal (texto)
+\setsansfont{Arial}                   % Arial para sans
+\setmonofont{Consolas}               % monoespaciada linda (opcional)
+
+% --- Utilidades ---
+\usepackage{hyperref}   % enlaces clickeables
+\usepackage{enumitem}   % listas controladas
+
+% --- Datos del documento ---
+\title{Documentation LaTeX + GitHub + Overleaf}
+\author{Sebastián Palavecino}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ---- Contenido principal ----
+\section{Introducción}
+\input{chapters/01-introduccion}
+
+\section{Alcance}
+\input{chapters/02-alcance}
+
+\section{GitHub: qué es y cómo lo usamos}
+\input{chapters/03-github}
+
+\section{LaTeX en local}
+\input{chapters/04-latex-local}
+
+\section{Sincronizar con Overleaf}
+\input{chapters/05-overleaf}
+
+% --- (Opcional) Glosario ---
+% \section{Glosario rápido (Git/GitHub)}
+% \input{chapters/06-glosario-git}
+
+\end{document}

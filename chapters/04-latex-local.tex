@@ -1,0 +1,51 @@
+\subsection*{Objetivo}
+Generar el PDF (\texttt{main.pdf}) en tu computadora y dejar listo el flujo para trabajar junto con Overleaf si hace falta.
+
+\subsection*{Requisitos (Windows)}
+\begin{itemize}
+  \item MiKTeX instalado (distribución \LaTeX{}).
+  \item \textbf{Opción A (simple):} usar \texttt{pdflatex}.
+  \item \textbf{Opción B (cómoda):} usar \texttt{latexmk} (requiere tener Perl instalado).
+\end{itemize}
+
+\subsection*{Compilar con \texttt{pdflatex} (opción simple)}
+Desde la carpeta del repositorio:
+\begin{verbatim}
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+\end{verbatim}
+(Se corre dos veces para actualizar índice). El PDF queda como \texttt{main.pdf}.
+
+\subsection*{Compilar con \texttt{latexmk} (opción cómoda)}
+\textbf{Si falla por ``falta Perl''}, instalar Strawberry Perl y reabrir la terminal. Luego:
+\begin{verbatim}
+latexmk -pdf -interaction=nonstopmode -file-line-error main.tex
+\end{verbatim}
+Para limpiar archivos temporales:
+\begin{verbatim}
+latexmk -c
+\end{verbatim}
+
+\subsection*{Estructura mínima esperada}
+\begin{verbatim}
+main.tex
+chapters/01-introduccion.tex
+chapters/02-alcance.tex
+chapters/03-github.tex
+chapters/04-latex-local.tex
+chapters/05-overleaf.tex
+\end{verbatim}
+
+\subsection*{Errores comunes (y solución rápida)}
+\begin{itemize}
+  \item \textbf{No se reconoce \texttt{pdflatex}}: MiKTeX no está en PATH. Reinstalar/abrir MiKTeX Console y reiniciar la terminal.
+  \item \textbf{Faltan paquetes} (ventana de MiKTeX): aceptar instalar paquetes automáticamente.
+  \item \textbf{\texttt{latexmk} falla}: instalar Perl y volver a correr (o usar \texttt{pdflatex} dos veces).
+\end{itemize}
+
+\subsection*{Checklist}
+\begin{itemize}
+  \item Compilar sin errores y abrir \texttt{main.pdf}.
+  \item Hacer commit + push de los \textit{.tex} (no subir archivos temporales).
+  \item (Opcional) Publicar el PDF en un Release de GitHub.
+\end{itemize}

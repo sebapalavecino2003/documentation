@@ -1,26 +1,21 @@
-# LaTeX
+@"
+# LaTeX temporales
 *.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
 *.bbl
 *.bcf
 *.blg
-*.fdb_latexmk
-*.fls
-*.glg
-*.glo
-*.gls
-*.ist
-*.log
-*.out
-*.run.xml
-*.synctex.gz
-*.toc
-*.lot
-*.lof
 
-# Editor/OS
-.vscode/
-.DS_Store
-Thumbs.db
+# PDFs generados (recomendado no versionarlos)
+*.pdf
 
-# Opcional: carpeta de builds locales
-/build/
+# Mantener placeholders
+!.gitkeep
+"@ | Out-File .gitignore -Encoding utf8

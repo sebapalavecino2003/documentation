@@ -1,0 +1,93 @@
+\subsection*{¿Qué es Overleaf y para qué lo usamos?}
+Overleaf es un editor \LaTeX{} online. Permite escribir desde el navegador y ver el PDF sin instalar nada en tu PC.
+En este proyecto lo usamos sólo si queremos editar en la nube y mantener sincronía con el repositorio de GitHub.
+
+\subsection*{Formas de conectarlo con este repositorio}
+Hay dos opciones. Elegí una (no hace falta usar las dos).
+
+\paragraph{Opción A — Usar la URL de Git de Overleaf (sirve con cualquier plan)}
+\begin{enumerate}[leftmargin=1.2em]
+  \item En el proyecto de Overleaf, abrí el menú \textbf{Git} y copiá la URL (formato \texttt{https://git.overleaf.com/<id>}).
+  \item En tu repositorio local, agregá Overleaf como remoto:
+\begin{verbatim}
+git remote add overleaf https://git.overleaf.com/<id>
+\end{verbatim}
+  \item Subir tus cambios locales a Overleaf:
+\begin{verbatim}
+git push overleaf master
+\end{verbatim}
+  \item Traer cambios hechos en Overleaf a tu PC:
+\begin{verbatim}
+git pull overleaf master
+\end{verbatim}
+\end{enumerate}
+\textbf{Notas:} (1) La rama por defecto en Overleaf suele ser \texttt{master}.
+(2) Si Overleaf ya tiene contenido y querés conservarlo, conviene clonar primero desde Overleaf y luego agregar GitHub como segundo remoto.
+
+\paragraph{Opción B — Crear el proyecto Overleaf desde GitHub (si tu plan lo permite)}
+\begin{enumerate}[leftmargin=1.2em]
+  \item En Overleaf: \textbf{New Project} $\rightarrow$ \textbf{From GitHub}.
+  \item Elegí este repositorio \texttt{documentation}.
+  \item Cuando edites online, usá los botones \textbf{Pull from GitHub} (traer) y \textbf{Push to GitHub} (enviar).
+\end{enumerate}
+
+\subsection*{Flujo de trabajo recomendado}
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{PC:} hacé cambios en una rama (por ejemplo \texttt{docs/intro}) y probá compilar.
+  \item \textbf{Subí} la rama a GitHub y abrí un Pull Request hacia \texttt{main}.
+  \item \textbf{Merge} aprobado $\rightarrow$ actualizá Overleaf:
+  \begin{itemize}
+    \item Opción A: \texttt{git push overleaf master} desde tu PC (o \texttt{git pull overleaf master} si editaron online).
+    \item Opción B: en Overleaf, \textbf{Pull from GitHub} para traer lo último de \texttt{main}.
+  \end{itemize}
+  \item Cuando quieras entregar una versión, compilá el PDF y publicá un \textit{Release} en GitHub adjuntando \texttt{main.pdf}.
+\end{enumerate}
+
+\subsection*{Problemas comunes y soluciones rápidas}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Acceso restringido en Overleaf:} pedí permiso de lectura/escritura al propietario del proyecto.
+  \item \textbf{Ramas diferentes (\texttt{main} vs \texttt{master}):} en Overleaf la rama suele ser \texttt{master}. Alineá con:
+\begin{verbatim}
+git checkout main
+git push overleaf main:master
+\end{verbatim}
+  \item \textbf{Conflictos al hacer pull/push:} primero traé cambios, resolvé archivos marcados, hacé commit y volvé a empujar.
+  \item \textbf{Overleaf no actualiza el PDF:} guardá todos los archivos (\texttt{Ctrl+S}) y forzá recompilación en Overleaf.
+  \item \textbf{Credenciales:} si pide usuario/clave, usá los datos de Overleaf (Opción A) o reconectá tu GitHub (Opción B).
+\end{itemize}
+
+\subsection*{Checklist rápido}
+\begin{itemize}[leftmargin=1.2em]
+  \item Elegí A (URL de Git) o B (From GitHub).
+  \item Probá una ida y vuelta: editar una línea en local $\rightarrow$ enviar a Overleaf; editar una línea en Overleaf $\rightarrow$ traer a local.
+  \item Confirmá que el PDF se compila en ambos (PC y Overleaf).
+\end{itemize}
+
+\subsection*{Comandos útiles (resumen)}
+\begin{verbatim}
+# agregar remoto Overleaf (Opción A)
+git remote add overleaf https://git.overleaf.com/<id>
+
+# enviar de local a Overleaf
+git push overleaf master
+
+# traer de Overleaf a local
+git pull overleaf master
+\end{verbatim}
+
+\subsection*{Puente local \textrightarrow{} Overleaf y vuelta}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Desde local a Overleaf (Opción A)}:
+\begin{verbatim}
+git push overleaf master
+\end{verbatim}
+  \item \textbf{Desde Overleaf a local (Opción A)}:
+\begin{verbatim}
+git pull overleaf master
+\end{verbatim}
+  \item \textbf{Si tu rama principal es \texttt{main}} y Overleaf usa \texttt{master}:
+\begin{verbatim}
+git checkout main
+git push overleaf main:master
+\end{verbatim}
+\end{itemize}
