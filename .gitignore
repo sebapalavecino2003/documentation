@@ -1,3 +1,5 @@
+@"
+# LaTeX temporales
 *.aux
 *.log
 *.out
@@ -10,17 +12,10 @@
 *.bbl
 *.bcf
 *.blg
-build/
-*.aux
-*.log
-*.out
-*.toc
-*.lof
-*.lot
-*.synctex.gz
-*.fdb_latexmk
-*.fls
-*.bbl
-*.bcf
-*.blg
+
+# PDFs generados (recomendado no versionarlos)
 *.pdf
+
+# Mantener placeholders
+!.gitkeep
+"@ | Out-File .gitignore -Encoding utf8
