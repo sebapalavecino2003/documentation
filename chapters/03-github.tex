@@ -1,0 +1,64 @@
+\subsection*{¿Qué es GitHub?}
+GitHub es un sitio web donde guardamos el contenido del proyecto (en este caso, la documentación en \LaTeX) de forma segura y con historial. 
+Permite trabajar en equipo: cada cambio queda registrado, se puede revisar, comentar y volver atrás si hace falta.
+
+\subsection*{¿Para qué lo usamos en este proyecto?}
+\begin{itemize}[leftmargin=1.2em]
+  \item Tener un \textbf{lugar único} con la documentación.
+  \item \textbf{Guardar el historial} de cambios (quién, cuándo y qué cambió).
+  \item \textbf{Colaborar} sin pisarnos: cada persona trabaja en su rama y luego propone el cambio.
+  \item \textbf{Publicar versiones} con el PDF final (Releases).
+\end{itemize}
+
+\subsection*{Conceptos básicos (sin vueltas)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Repositorio (repo):} la carpeta del proyecto en GitHub con todos los archivos.
+  \item \textbf{Commit:} un paquete de cambios con un mensaje corto (ej.: \texttt{docs: agrega alcance}).
+  \item \textbf{Rama (branch):} una línea de trabajo paralela para no romper la principal.
+  \item \textbf{Pull Request (PR):} una propuesta de cambio desde una rama hacia la principal para revisar y aprobar.
+  \item \textbf{Issue:} una tarea o problema por resolver; sirve para anotar pendientes y asignar trabajo.
+  \item \textbf{Release:} una versión publicada del proyecto (acá adjuntamos el PDF).
+\end{itemize}
+
+\subsection*{Estructura mínima del repo (lo que vas a ver)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \texttt{main.tex}: documento principal que incluye capítulos.
+  \item \texttt{chapters/}: capítulos sueltos (uno por tema).
+  \item \texttt{figures/}: imágenes (si hacen falta).
+  \item \texttt{bib/references.bib}: bibliografía (opcional al inicio).
+  \item \texttt{README.md}: cómo compilar y cómo sincronizar con Overleaf.
+\end{itemize}
+
+\subsection*{Flujo de trabajo recomendado (paso a paso)}
+\begin{enumerate}[leftmargin=1.2em]
+  \item \textbf{Traer el repo} a tu PC (clonar) y abrirlo en VS Code.
+  \item \textbf{Crear una rama} por cada cambio (ej.: \texttt{docs/intro}).
+  \item \textbf{Editar} los archivos necesarios (capítulos, figuras).
+  \item \textbf{Hacer commits} chicos con mensajes claros.
+  \item \textbf{Subir la rama} a GitHub y abrir un \textbf{Pull Request}.
+  \item \textbf{Revisar} (aunque seas vos mismo) y hacer \textbf{merge} a \texttt{main}.
+  \item \textbf{Publicar un Release} cuando quieras “congelar” una versión y adjuntar el \texttt{main.pdf}.
+\end{enumerate}
+
+\subsection*{Buenas prácticas}
+\begin{itemize}[leftmargin=1.2em]
+  \item Un cambio concreto = un commit con mensaje claro.
+  \item Usar ramas con nombres simples: \texttt{docs/<tema>} o \texttt{fix/<detalle>}.
+  \item No subir archivos temporales ni PDFs al repo (el PDF va en Releases).
+  \item Mantener el \texttt{README.md} corto pero actualizado.
+\end{itemize}
+
+\subsection*{Errores comunes y cómo salir rápido}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{“No me aparecen mis cambios en GitHub”}: falta \textit{push}. Hacer \texttt{git push origin <rama>}.
+  \item \textbf{“No veo los cambios del otro”}: traer lo último con \texttt{git pull origin main}.
+  \item \textbf{“Me confundí de rama”}: guardar, cambiar de rama con VS Code (o \texttt{git checkout}), y volver a aplicar el cambio.
+  \item \textbf{Conflicto al hacer merge}: abrir el archivo marcado, elegir qué parte dejar, guardar y hacer commit del merge.
+\end{itemize}
+
+\subsection*{Publicar una versión con el PDF}
+\begin{enumerate}[leftmargin=1.2em]
+  \item Compilar \texttt{main.pdf} en tu PC (ver sección \textit{LaTeX en local}).
+  \item En GitHub: \textit{Releases} $\rightarrow$ \textit{New release}. 
+  \item Tag (por ejemplo): \texttt{v0.1.0}. Adjuntar \texttt{main.pdf} y publicar.
+\end{enumerate}
